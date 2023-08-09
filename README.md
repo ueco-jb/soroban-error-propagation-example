@@ -77,6 +77,8 @@ Please check out tests and comments to see the variants I checked:
 - [then I checked that even exactly same testcase, but still using wasm binary, will fail with the same error](https://github.com/ueco-jb/soroban-error-propagation-example/blob/master/error_propagation_example/src/test.rs#L34-L49)
 - [and at last I literally copied existing testcase from token contract, which works fine out there](https://github.com/ueco-jb/soroban-error-propagation-example/blob/master/error_propagation_example/src/test.rs#L57-L76)
 
+Could it be that errors from other binaries are being catched under one umbrella [in soroban-env-common/src/errors.rs:161](https://github.com/stellar/rs-soroban-env/blob/844b6abc461594027158a7bb5643447d0f90a81e/soroban-env-common/src/error.rs#L161C11-L161C11)?
+
 ## Live net
 
 ```bash

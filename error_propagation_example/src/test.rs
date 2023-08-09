@@ -22,13 +22,9 @@ fn test_from_contract() {
 
     let token_a = create_token_contract(&e, &from);
 
-    let error_propagation_client = ErrorPropagationClient::new(&e, &e.register_contract(None, crate::ErrorPropagation {}));
-    error_propagation_client.transfers(
-        &from,
-        &to,
-        &token_a.address,
-        &1000i128
-    );
+    let error_propagation_client =
+        ErrorPropagationClient::new(&e, &e.register_contract(None, crate::ErrorPropagation {}));
+    error_propagation_client.transfers(&from, &to, &token_a.address, &1000i128);
 }
 
 // This is a replicated testcase from the token contract
